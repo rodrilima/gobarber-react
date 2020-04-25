@@ -4,6 +4,8 @@
   "private": true,
   "homepage": "",
   "dependencies": {
+    "@unform/core": "^2.1.0",
+    "@unform/web": "^2.1.0",
     "axios": "^0.19.2",
     "polished": "^3.5.2",
     "react": "^16.13.1",
@@ -11,7 +13,8 @@
     "react-icons": "^3.10.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
-    "styled-components": "^5.1.0"
+    "styled-components": "^5.1.0",
+    "yup": "^0.28.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -46,6 +49,7 @@
     "@types/react-dom": "^16.9.0",
     "@types/react-router-dom": "^5.1.4",
     "@types/styled-components": "^5.1.0",
+    "@types/yup": "^0.28.0",
     "@typescript-eslint/eslint-plugin": "^2.29.0",
     "@typescript-eslint/parser": "^2.29.0",
     "eslint": "^6.8.0",

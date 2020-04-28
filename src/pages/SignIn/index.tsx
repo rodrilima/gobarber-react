@@ -7,7 +7,7 @@ import { Form } from '@unform/web';
 
 import { useAuth } from '../../hooks/auth';
 import { useToast } from '../../hooks/toast';
-import { Container, Background, Content } from './styles';
+import { Container, Background, AnimationContainer ,Content } from './styles';
 import logo from '../../assets/logo.svg';
 
 import Input from '../../components/Input';
@@ -24,7 +24,7 @@ const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
   const { signIn } = useAuth();
-  const { addToast, removeToast } = useToast();
+  const { addToast } = useToast();
 
   const handleSubmit = useCallback(async (data: signInFormData) => {
     try {
@@ -51,27 +51,29 @@ const SignIn: React.FC = () => {
         type: 'error'
       });
     }
-  }, [signIn]);
+  }, [signIn, addToast]);
   return (
     <Container>
       <Content>
-        <img src={logo} alt="GoBarber" />
-        <Form ref={formRef} onSubmit={handleSubmit}>
-          <h1>Faça seu logon</h1>
+        <AnimationContainer>
+          <img src={logo} alt="GoBarber" />
+          <Form ref={formRef} onSubmit={handleSubmit}>
+            <h1>Faça seu logon</h1>
 
-          <Input icon={FiMail} name="email" placeholder="E-mail" />
+            <Input icon={FiMail} name="email" placeholder="E-mail" />
 
-          <Input icon={FiLock} name="password" type="password" placeholder="Senha" />
+            <Input icon={FiLock} name="password" type="password" placeholder="Senha" />
 
-          <Button type="submit">Entrar</Button>
+            <Button type="submit">Entrar</Button>
 
-          <a href="forgot">Esqueci minha senha</a>
-        </Form>
+            <a href="forgot">Esqueci minha senha</a>
+          </Form>
 
-        <Link to="/signup">
-          <FiLogIn />
-          Criar conta
-        </Link>
+          <Link to="/signup">
+            <FiLogIn />
+            Criar conta
+          </Link>
+        </AnimationContainer>
       </Content>
       <Background />
     </Container>

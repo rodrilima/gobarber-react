@@ -53,7 +53,7 @@ const SignIn: React.FC = () => {
         type: 'error'
       });
     }
-  }, [signIn, addToast]);
+  }, [signIn, addToast, history]);
   return (
     <Container>
       <Content>
